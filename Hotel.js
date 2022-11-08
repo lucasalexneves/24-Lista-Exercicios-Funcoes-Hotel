@@ -27,17 +27,35 @@ let nomeHotel = []
 let categoria = []
 let endereco = []
 let telefone = []
+let indexHotel = 0
 
 // reserva 
 let idReserva = []
 let nomeReserva = []
 let diaEntrada = []
 let diaSaida = []
+let indexReserva = 0
 
 function CadastrarHotel(){
-
+    idHotel[indexHotel] = indexHotel + 1
+    nomeHotel[indexHotel] = prompt("Insira o nome do Hotel.")
+    categoria[indexHotel] = prompt("Insira a categoria do Hotel.")
+    endereco[indexHotel] = prompt("Insira o endereço do Hotel.")
+    telefone[indexHotel] = prompt("Insira o telefone do Hotel.")
+    indexHotel++ 
 }
 
 function CadastrarReserva(){
-    
+    indexReserva = indexReserva + 1
+    nomeReserva[indexReserva] = prompt("Insira o nome do responsável pela reserva.")
+    diaEntrada[indexReserva] = prompt("Dia de CheckIn no Hotel.")
+    diaSaida[indexReserva] = prompt("Dia do CheckOut no Hotel.")
+    indexReserva++
 }
+
+// 3. Criar uma função que recebe como parâmetro o id de uma reserva e exibe no
+// console: nome do hotel - endereço - dia de entrada - dia de saída
+
+function BuscarPorId(id) {
+        
+} 
