@@ -57,5 +57,9 @@ function CadastrarReserva(){
 // console: nome do hotel - endereço - dia de entrada - dia de saída
 
 function BuscarPorId(id) {
-        
+    for (let index = 0; index < idReserva.length; index++) {
+        if(id == idReserva[index]){
+            console.log("Nome do Hotel: " + nomeHotel[index] + ". Endereço do hotel: " + endereco[index] + ". Dia de Check In: " + diaEntrada[index] + ". Dia de Check Out: " + diaSaida[index])
+        }           
+    }
 } 
