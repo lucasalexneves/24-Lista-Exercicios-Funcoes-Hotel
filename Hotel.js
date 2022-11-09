@@ -36,6 +36,8 @@ let diaEntrada = []
 let diaSaida = []
 let indexReserva = 0
 
+//Funções
+
 function CadastrarHotel(){
     idHotel[indexHotel] = indexHotel + 1
     nomeHotel[indexHotel] = prompt("Insira o nome do Hotel.")
@@ -68,3 +70,12 @@ function BuscarPorNome(nome){
         }
     }
 }
+
+function BuscarPorCategoria(cat){
+    for (let index = 0; index < categoria.length; index++) {
+        if(cat == categoria[index]){
+            console.log("Todos os hoteis na categoria - " + cat + " : " + categoria[index])
+        }
+    }
+}
+
