@@ -53,9 +53,6 @@ function CadastrarReserva(){
     indexReserva++
 }
 
-// 3. Criar uma função que recebe como parâmetro o id de uma reserva e exibe no
-// console: nome do hotel - endereço - dia de entrada - dia de saída
-
 function BuscarPorId(id) {
     for (let index = 0; index < idReserva.length; index++) {
         if(id == idReserva[index]){
@@ -63,3 +60,11 @@ function BuscarPorId(id) {
         }           
     }
 } 
+
+function BuscarPorNome(nome){
+    for (let index = 0; index < nomeReserva.length; index++) {
+        if(nome == nomeReserva[index]){
+            console.log("Todas as reservas no nome: " + idReserva[index])
+        }
+    }
+}
