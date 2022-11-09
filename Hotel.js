@@ -79,3 +79,16 @@ function BuscarPorCategoria(cat){
     }
 }
 
+function AtualizarTelefone(id, novoTel){
+    for (let index = 0; index < idHotel.length; index++) {
+        if(id == idHotel[index]){
+            telefone[index] = novoTel
+        }
+    }
+}
+
+/* Algumas validações devem ser feitas na hora de fazer os cadastros:
+● O id não pode ser igual a nenhum outro já existente;
+● O dia de entrada não pode ser maior que o de saída;
+● No cadastro de uma reserva o id do hotel deve ser válido, ou seja, não deve permitir
+o cadastro de um hotel que não esteja no sistema; */
