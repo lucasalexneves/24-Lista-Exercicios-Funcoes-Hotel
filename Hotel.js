@@ -51,10 +51,23 @@ function CadastrarHotel(){
 function CadastrarReserva(){
     indexReserva = indexReserva + 1
     idReservaHotel[indexReserva] = prompt("Insira o ID do Hotel que deseja fazer a reserva.")
-    nomeReserva[indexReserva] = prompt("Insira o nome do responsável pela reserva.")
-    diaEntrada[indexReserva] = prompt("Dia de CheckIn no Hotel.")
-    diaSaida[indexReserva] = prompt("Dia do CheckOut no Hotel.")
-    indexReserva++
+    for (let index = 0; index < idHotel.length; index++) {
+        if(idReservaHotel[indexReserva] == idHotel[index]){
+            nomeReserva[indexReserva]= prompt("Insira o nome do responsável pela reserva.")
+            diaEntrada[indexReserva] = prompt("Dia de CheckIn no Hotel.")
+            diaSaida[indexReserva] = prompt("Dia do CheckOut no Hotel.")
+            if(diaEntrada < diaSaida){
+                console.log("Reserva Realizada com sucesso.")
+                indexReserva++
+            } else{
+                console.log("Inválido faça cadastro novamente")
+            }
+        } else {
+            console.log("ID de hotel Inexistente!")
+        }
+        
+    }
+    
 }
 
 function BuscarPorId(id) {
@@ -80,7 +93,7 @@ function BuscarPorNome(nome){
 function BuscarPorCategoria(cat){
     for (let index = 0; index < categoria.length; index++) {
         if(cat == categoria[index]){
-            console.log("Todos os hoteis na categoria - " + cat + " : " + categoria[index])
+            console.log("Todos os hoteis na categoria - " + cat + " : " + nomeHotel[index])
         } else {
             console.log("Categoria não encontrada")
         }
@@ -108,7 +121,6 @@ do{
             break
         case "2":
             CadastrarReserva()
-            console.log("Reserva Realizada com sucesso.")
             break
         case "3":
             let id = prompt("Insira o id que deseja buscar")
@@ -129,7 +141,7 @@ do{
             break
         case "7":
             console.log("Reserva Finalizada")
-            opcao = false
+            continuar = false
             break
         default:
             console.log("Opção incorreta, insire uma opção válida.")
